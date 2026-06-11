@@ -1,5 +1,4 @@
 -- Inlay Hints
-vim.lsp.inlay_hint.enable()
 require("gitsigns").toggle_current_line_blame(true)
 
 -- Rebinds
