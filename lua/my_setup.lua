@@ -38,6 +38,7 @@
 
 -- Inlay Hints
 vim.lsp.inlay_hint.enable()
+require("gitsigns").toggle_current_line_blame(true)
 
 vim.cmd "noremap k j|noremap <C-w>k <C-w>j|noremap <C-w><C-k> <C-w>j"
 vim.cmd "noremap j k|noremap <C-w>j <C-w>k|noremap <C-w><C-j> <C-w>k"
