@@ -15,7 +15,14 @@ return {
     local status = require "astroui.status"
     opts.statusline = { -- statusline
       hl = { fg = "fg", bg = "bg" },
-      status.component.mode(),
+      status.component.mode {
+        mode_text = {
+          padding = {
+            left = 1,
+            right = 1,
+          },
+        },
+      },
       status.component.git_branch(),
       status.component.file_info(),
       status.component.git_diff(),
@@ -51,7 +58,8 @@ return {
             end
           end),
         },
-        hl = status.hl.get_attributes "mode", -- highlight based on mode attributes
+        hl = function() return { fg = "mode_fg" } end,
+        -- hl = status.hl.get_attributes "mode", -- highlight based on mode attributes
         surround = { separator = "right", color = status.hl.mode_bg }, -- background highlight based on mode
       },
     }
