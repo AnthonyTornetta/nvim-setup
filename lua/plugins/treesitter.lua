@@ -17,6 +17,7 @@ return {
         "vim",
         "rust",
         "yaml",
+        "wgsl",
         -- add more arguments for adding more treesitter parsers
       },
     },

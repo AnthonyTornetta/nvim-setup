@@ -69,7 +69,9 @@ return {
           -- the rest of the autocmd options (:h nvim_create_autocmd)
           desc = "Refresh codelens (buffer)",
           callback = function(args)
-            if require("astrolsp").config.features.codelens then vim.lsp.codelens.enable(true, { bufnr = args.buf }) end
+            if require("astrolsp").config.features.codelens then
+              if vim.lsp.codelens.enable ~= nil then vim.lsp.codelens.enable(true, { bufnr = args.buf }) end
+            end
           end,
         },
       },
